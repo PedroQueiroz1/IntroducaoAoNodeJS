@@ -1,23 +1,9 @@
 var db = require('../../config/db');
 
-
-
 module.exports = function(){
-  this.all = function(){
-
+  this.all = function(retorno){
     var con = db();
-    con.query('select * from clientes',function(erro,resultado){
-       console.log(resultado);
-     });
-
-
-
-    return [
-      {nome:"Paulo",email:"paulo@mail.com"}
-    ];
+    return con.query('select * from clientes',retorno);
   };
-
   return this;
-
-
 };
