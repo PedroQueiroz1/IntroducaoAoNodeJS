@@ -10,4 +10,10 @@ module.exports = function(app){
         clienteController.index(req,res);
 
     });
+
+    app.get('/detalhe/:id',function(req,res){
+        //console.log(req.params.id);
+        clienteController.show(req,res);
+
+    });
 }
